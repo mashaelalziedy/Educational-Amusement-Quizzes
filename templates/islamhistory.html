@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/quiz.css">
+    <title>التاريخ الاسلامي</title>
+
+</head>
+<body>
+    <!--QUIZ-QUESTION-->
+    <script>var ques=[]; var ans=[]; var rightAns=[];  </script>
+    {% for info in data %}
+        <script>
+            ques.push('{{info[2]}}');
+            rightAns.push('{{info[3]}}');
+            ans.push('{{info[3]}}');
+            ans.push('{{info[4]}}');
+            ans.push('{{info[5]}}');
+            ans.push('{{info[6]}}');  
+        </script>
+    {% endfor %}
+    <script src="static/quiz.js"> func(ques, ans, rightAns);</script>
+    <div class="wrapper">
+        <div class="quiz" style="text-align: center;">
+            <div class="quiz_header">
+                <div class="quiz_user">
+                    <p id="titll">اسئلة عامة في التاريخ الاسلامي</p>
+                </div>
+            </div>
+
+            <div class="quiz_body" style="text-align: center;">
+                <div id="questions">
+                </div>
+ 
+                <button class="btn-next" onclick="next()">التالي </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/quiz.js"></script>
+</body>
+</html>
